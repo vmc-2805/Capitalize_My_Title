@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0fbf9"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="10" fill="#0a6e63"/>
+  <rect x="80" y="120" width="88" height="88" rx="20" fill="#0a6e63"/>
+  <text x="124" y="180" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="44" font-weight="700" fill="#ffffff" text-anchor="middle">Aa</text>
+  <text x="80" y="330" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="76" font-weight="700" fill="#111827">Capitalize My Title</text>
+  <text x="80" y="400" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="34" fill="#374151">Free title case converter — APA, Chicago, AP, MLA,</text>
+  <text x="80" y="448" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="34" fill="#374151">Bluebook, AMA, NYT and Wikipedia style.</text>
+  <text x="80" y="540" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="26" font-weight="600" fill="#0a6e63">capitalizemytitle.com</text>
+</svg>

@@ -1,0 +1,22 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  # Netlify looks in netlify/functions by default; the handler lives in api/.
+  functions = "api"
+
+[functions]
+  node_bundler = "esbuild"
+  # Only generate.js is an entry point — the shared core and the Workers adapter
+  # are imported by it, not deployed as separate functions.
+  included_files = ["api/_generate-core.js"]
+
+[[redirects]]
+  from = "/api/generate"
+  to = "/.netlify/functions/generate"
+  status = 200
+
+# Everything else falls through to the single-page app.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

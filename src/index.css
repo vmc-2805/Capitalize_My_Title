@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Deep teal. Chosen over the default blue because it reads as a considered
+     brand colour rather than a framework default, and #0a6e63 clears WCAG AA
+     for white text on the button and for link text on white (6.2:1). */
+  --color-brand-50: #f0fbf9;
+  --color-brand-100: #d7f2ee;
+  --color-brand-200: #a9e5dc;
+  --color-brand-300: #6fd0c3;
+  --color-brand-400: #35b3a3;
+  --color-brand-500: #10897c;
+  --color-brand-600: #0a6e63;
+  --color-brand-700: #085249;
+  --color-brand-800: #06413a;
+  --color-brand-900: #053832;
+
+  --color-ink-500: #5b6271;
+  --color-ink-700: #374151;
+  --color-ink-900: #111827;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink-900 font-sans antialiased;
+}
+
+/* Shared building blocks so every tool page looks like one product. */
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  /* Tool pages have no sidebar, so they use a narrower column. A form that
+     runs the full width of a desktop screen is harder to use, not easier. */
+  .container-tool {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6;
+  }
+
+  /* Tailwind v4 cannot @apply a custom class, so the shared button base is
+     declared once for every variant selector. */
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border
+      border-transparent px-4 py-2 text-sm font-semibold transition
+      focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600
+      disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-brand-600 text-white hover:bg-brand-700;
+  }
+
+  .btn-secondary {
+    @apply border-gray-300 bg-white text-ink-700 hover:border-brand-400 hover:text-brand-700;
+  }
+
+  .btn-ghost {
+    @apply text-ink-700 hover:bg-gray-100;
+  }
+
+  .field {
+    @apply w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-ink-900
+      shadow-sm outline-none transition placeholder:text-gray-400
+      focus:border-brand-500 focus:ring-2 focus:ring-brand-100;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-semibold text-ink-700;
+  }
+
+  .card {
+    @apply rounded-xl border border-gray-200 bg-white shadow-sm;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1
+      text-xs font-medium text-ink-700;
+  }
+
+  .prose-basic {
+    @apply text-[15px] leading-7 text-ink-700;
+  }
+
+  .prose-basic h2 {
+    @apply mt-8 mb-3 text-xl font-bold text-ink-900;
+  }
+
+  .prose-basic h3 {
+    @apply mt-6 mb-2 text-base font-bold text-ink-900;
+  }
+
+  .prose-basic p {
+    @apply mb-4;
+  }
+
+  .prose-basic ul {
+    @apply mb-4 list-disc space-y-1.5 pl-5;
+  }
+
+  .prose-basic ol {
+    @apply mb-4 list-decimal space-y-1.5 pl-5;
+  }
+
+  .prose-basic a {
+    @apply font-medium text-brand-600 underline decoration-brand-200 underline-offset-2 hover:decoration-brand-500;
+  }
+
+  .prose-basic code {
+    @apply rounded bg-gray-100 px-1.5 py-0.5 font-mono text-[13px] text-ink-900;
+  }
+}

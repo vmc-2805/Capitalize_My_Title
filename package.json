@@ -1,0 +1,32 @@
+{
+  "name": "capitalize-title",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Free title capitalization tool, converters, word tools, generators and word game solvers.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "postbuild": "node scripts/postbuild.mjs",
+    "test": "node scripts/test.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "test:api": "node scripts/test-api.mjs",
+    "test:all": "node scripts/test.mjs && node scripts/test-api.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.7.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "@vitejs/plugin-react": "^5.0.0",
+    "playwright": "^1.62.1",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.6"
+  }
+}

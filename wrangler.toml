@@ -1,0 +1,17 @@
+# Cloudflare Workers. The static site is served from dist/ and /api/generate is
+# handled by the Worker.
+#
+# Set the key as a secret, never here:
+#   wrangler secret put GEMINI_API_KEY
+
+name = "capitalize-my-title"
+main = "api/worker.js"
+compatibility_date = "2026-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = "dist"
+# Static files win; anything they don't cover reaches the Worker, which serves
+# /api/generate and 404s everything else.
+binding = "ASSETS"
+not_found_handling = "single-page-application"

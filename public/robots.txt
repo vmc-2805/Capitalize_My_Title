@@ -1,0 +1,5 @@
+# Capitalize My Title
+User-agent: *
+Allow: /
+
+Sitemap: https://capitalizemytitle.com/sitemap.xml
