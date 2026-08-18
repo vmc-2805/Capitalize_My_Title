@@ -15,6 +15,7 @@ const titleOptions = await import('../src/lib/titleOptions.js')
 const unicode = await import('../src/lib/unicode.js')
 const nav = await import('../src/data/navigation.js')
 const posts = await import('../src/data/posts.js')
+const { seoService } = await import('../src/lib/seoService.js')
 
 let passed = 0
 let failed = 0
@@ -606,6 +607,11 @@ check('every page has complete SEO metadata', () => {
     assert.ok(page.keywords?.length > 0, `${page.path} keywords`)
     assert.ok(page.h1?.length > 0, `${page.path} h1`)
     assert.ok(page.key, `${page.path} component key`)
+
+    // Verify dynamic seoService constraints (max 65 chars title, max 165 chars description)
+    const dynamic = seoService.get(page.path)
+    assert.ok(dynamic.title.length <= 65, `${page.path} dynamic title too long (${dynamic.title.length})`)
+    assert.ok(dynamic.description.length <= 165, `${page.path} dynamic description too long (${dynamic.description.length})`)
   }
 })
 
@@ -652,6 +658,25 @@ check('related tools never include the current page', () => {
     assert.ok(!related.some((r) => r.path === tool.path), `${tool.path} links to itself`)
     assert.ok(related.length > 0)
   }
+})
+
+check('seoService supports dynamic overrides and truncation limits', () => {
+  const original = seoService.get('/')
+  assert.ok(original.title.length > 0)
+
+  // Set title and description overrides
+  seoService.set('/', {
+    title: 'Short title override',
+    description: 'This is a description that is intentionally created to be extremely long and exceed the one hundred and sixty five character count threshold to verify truncation works cleanly.',
+  })
+
+  const updated = seoService.get('/')
+  assert.equal(updated.title, 'Short title override')
+  assert.ok(updated.description.endsWith('...'))
+  assert.equal(updated.description.length, 165)
+
+  // Cleanup overrides to keep other tests pure
+  seoService.set('/', { title: undefined, description: undefined })
 })
 
 /* ------------------------------------------------------------------ */

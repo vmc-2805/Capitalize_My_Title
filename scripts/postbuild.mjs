@@ -19,6 +19,7 @@ const dist = join(root, 'dist')
 const { SITE } = await import(new URL('../src/data/site.js', import.meta.url))
 const nav = await import(new URL('../src/data/navigation.js', import.meta.url))
 const { POSTS } = await import(new URL('../src/data/posts.js', import.meta.url))
+const { seoService, truncate } = await import(new URL('../src/lib/seoService.js', import.meta.url))
 
 const escapeHtml = (value) =>
   String(value).replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]))
@@ -30,26 +31,40 @@ const abs = (path) => `${SITE.url}${path === '/' ? '' : path}`
 /* ------------------------------------------------------------------ */
 
 const routes = [
-  ...nav.ALL_PAGES.map((page) => ({
-    path: page.path,
-    title: page.path === '/' ? page.title : `${page.title} | ${SITE.name}`,
-    description: page.description,
-    keywords: page.keywords || [],
-    type: 'website',
-    // Tool pages are the money pages; the homepage outranks everything.
-    priority: page.path === '/' ? '1.0' : page.groupId === 'site' ? '0.5' : '0.8',
-    changefreq: page.groupId === 'blog' ? 'weekly' : 'monthly',
-  })),
-  ...POSTS.map((post) => ({
-    path: `/blog/post/${post.slug}`,
-    title: `${post.title} | ${SITE.name}`,
-    description: post.description,
-    keywords: post.keywords,
-    type: 'article',
-    lastmod: post.updated || post.date,
-    priority: '0.7',
-    changefreq: 'monthly',
-  })),
+  ...nav.ALL_PAGES.map((page) => {
+    const dynamic = seoService.get(page.path)
+    const rawTitle = dynamic.title
+    const fullTitle = rawTitle.includes(SITE.name) || page.path === '/' ? rawTitle : `${rawTitle} | ${SITE.name}`
+    const finalTitle = truncate(fullTitle, 65)
+
+    return {
+      path: page.path,
+      title: finalTitle,
+      description: dynamic.description,
+      keywords: dynamic.keywords || [],
+      type: 'website',
+      priority: page.path === '/' ? '1.0' : page.groupId === 'site' ? '0.5' : '0.8',
+      changefreq: page.groupId === 'blog' ? 'weekly' : 'monthly',
+    }
+  }),
+  ...POSTS.map((post) => {
+    const path = `/blog/post/${post.slug}`
+    const dynamic = seoService.get(path)
+    const rawTitle = dynamic.title
+    const fullTitle = rawTitle.includes(SITE.name) ? rawTitle : `${rawTitle} | ${SITE.name}`
+    const finalTitle = truncate(fullTitle, 65)
+
+    return {
+      path: path,
+      title: finalTitle,
+      description: dynamic.description,
+      keywords: dynamic.keywords || [],
+      type: 'article',
+      lastmod: post.updated || post.date,
+      priority: '0.7',
+      changefreq: 'monthly',
+    }
+  }),
 ]
 
 /* ------------------------------------------------------------------ */

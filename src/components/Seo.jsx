@@ -1,4 +1,5 @@
 import { SITE } from '../data/site.js'
+import { seoService, truncate } from '../lib/seoService.js'
 
 /**
  * React 19 hoists <title>, <meta> and <link> to <head> automatically, so no
@@ -16,24 +17,30 @@ export default function Seo({
   modifiedTime,
   jsonLd = [],
 }) {
+  const dynamicMeta = seoService.get(path)
+  const activeTitle = dynamicMeta.title || truncate(title, 65) || ''
+  const activeDescription = dynamicMeta.description || truncate(description, 165) || ''
+  const activeKeywords = dynamicMeta.keywords?.length > 0 ? dynamicMeta.keywords : keywords
+
   const canonical = `${SITE.url}${path === '/' ? '' : path}`
-  const fullTitle = title.includes(SITE.name) || path === '/' ? title : `${title} | ${SITE.name}`
+  const fullTitle = activeTitle.includes(SITE.name) || path === '/' ? activeTitle : `${activeTitle} | ${SITE.name}`
+  const finalTitle = truncate(fullTitle, 65)
   const imageUrl = image.startsWith('http') ? image : `${SITE.url}${image}`
   const blocks = Array.isArray(jsonLd) ? jsonLd : [jsonLd]
 
   return (
     <>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+      <title>{finalTitle}</title>
+      <meta name="description" content={activeDescription} />
+      {activeKeywords.length > 0 && <meta name="keywords" content={activeKeywords.join(', ')} />}
       <link rel="canonical" href={canonical} />
       {noindex && <meta name="robots" content="noindex, follow" />}
       {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />}
 
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE.name} />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={activeDescription} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:locale" content={SITE.locale} />
@@ -42,8 +49,8 @@ export default function Seo({
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={SITE.twitter} />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={finalTitle} />
+      <meta name="twitter:description" content={activeDescription} />
       <meta name="twitter:image" content={imageUrl} />
 
       {blocks.filter(Boolean).map((block, i) => (
@@ -72,31 +79,37 @@ export const organizationSchema = () => ({
   description: SITE.description,
 })
 
-export const websiteSchema = () => ({
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: SITE.name,
-  url: SITE.url,
-  description: SITE.description,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/tools?q={search_term_string}` },
-    'query-input': 'required name=search_term_string',
-  },
-})
+export const websiteSchema = () => {
+  const dynamic = seoService.get('/')
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    description: dynamic.description || SITE.description,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${SITE.url}/tools?q={search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
 
-export const softwareSchema = (page) => ({
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: page.h1 || page.label,
-  url: `${SITE.url}${page.path}`,
-  description: page.description,
-  applicationCategory: 'UtilitiesApplication',
-  operatingSystem: 'Any',
-  browserRequirements: 'Requires JavaScript',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-})
+export const softwareSchema = (page) => {
+  const dynamic = seoService.get(page.path)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: dynamic.title.split(' | ')[0] || page.h1 || page.label,
+    url: `${SITE.url}${page.path}`,
+    description: dynamic.description || page.description,
+    applicationCategory: 'UtilitiesApplication',
+    operatingSystem: 'Any',
+    browserRequirements: 'Requires JavaScript',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  }
+}
 
 export const breadcrumbSchema = (trail) => ({
   '@context': 'https://schema.org',
@@ -119,23 +132,27 @@ export const faqSchema = (faqs) => ({
   })),
 })
 
-export const articleSchema = (post) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  headline: post.title.slice(0, 110),
-  description: post.description,
-  image: [`${SITE.url}${SITE.ogImage}`],
-  datePublished: post.date,
-  dateModified: post.updated || post.date,
-  author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-  publisher: {
-    '@type': 'Organization',
-    name: SITE.name,
-    logo: { '@type': 'ImageObject', url: `${SITE.url}${SITE.logo}` },
-  },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE.url}/blog/post/${post.slug}` },
-  wordCount: post.body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
-})
+export const articleSchema = (post) => {
+  const path = `/blog/post/${post.slug}`
+  const dynamic = seoService.get(path)
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: dynamic.title.split(' | ')[0] || post.title.slice(0, 110),
+    description: dynamic.description || post.description,
+    image: [`${SITE.url}${SITE.ogImage}`],
+    datePublished: post.date,
+    dateModified: post.updated || post.date,
+    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE.name,
+      logo: { '@type': 'ImageObject', url: `${SITE.url}${SITE.logo}` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE.url}/blog/post/${post.slug}` },
+    wordCount: post.body.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length,
+  }
+}
 
 export const itemListSchema = (items, name) => ({
   '@context': 'https://schema.org',
