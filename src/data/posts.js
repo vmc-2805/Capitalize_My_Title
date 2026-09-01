@@ -8,404 +8,159 @@
 
 export const POSTS = [
   {
-    slug: 'title-case-vs-sentence-case',
+    slug: 'how-to-write-perfect-paragraphs',
     category: 'writing',
-    title: 'Title Case vs Sentence Case: Which One Should You Use?',
+    image: '/blog-img-paragraphs.jpg',
+    title: 'How to Write Perfect Paragraphs Every Time',
     description:
-      'Title case looks official. Sentence case reads faster. Here is how to choose between them for headings, buttons, subheads and email subject lines.',
-    keywords: ['title case vs sentence case', 'when to use sentence case', 'headline capitalization', 'ui capitalization', 'email subject case'],
-    date: '2026-01-14',
-    updated: '2026-06-02',
-    readingTime: 6,
-    excerpt:
-      'The two styles send different signals. One says "this is a finished, published work". The other says "this is a person talking to you". Choose on purpose.',
-    body: `
-<p>There are really only two capitalization choices you make again and again: <strong>Title Case Like This</strong>, or <strong>Sentence case like this</strong>. Everything else — whether "with" gets a capital, what happens after a colon — comes after that first choice.</p>
-
-<h2>What each style says to the reader</h2>
-<p>Title case is the style of finished, published work: book covers, journal papers, newspaper headlines, chapter names. When a reader sees title case, they read the line as <em>the name of a thing</em>.</p>
-<p>Sentence case is the style of speech. It reads like one person talking to another. It is also faster to scan, because the few capital letters left carry real meaning instead of decoration.</p>
-
-<h2>The simple rule</h2>
-<ul>
-  <li><strong>Use title case</strong> for anything that will be listed, cited or shelved: article titles, book titles, paper titles, course names, official document names.</li>
-  <li><strong>Use sentence case</strong> for anything a reader moves through quickly: subheadings, image captions, table headings, tooltips, buttons, form labels and email subject lines.</li>
-</ul>
-<p>Almost every modern design system says the same thing. Google's Material, Apple's guidelines and GOV.UK all use sentence case for interface text, for two reasons. It is easier to read at small sizes, and it saves writers from making a style guide decision on every single button.</p>
-
-<h2>Email subject lines are special</h2>
-<p>A subject line in title case reads like an advertisement. A subject line in sentence case reads like a message from a person, which is the whole point of email. Large tests over the last ten years have found sentence case performing as well as or better than title case, and none have found a real advantage the other way.</p>
-<p>There is a second, harder reason. Title case plus an exclamation mark plus a capitalized "FREE" is a pattern spam filters recognise. Sentence case keeps you away from that pattern automatically.</p>
-
-<h2>The one thing worse than either</h2>
-<p>Mixing them. A page where three subheadings are in title case and two are in sentence case looks careless, and readers notice even when they cannot say why. If you inherit a messy document, pick one style, apply it everywhere, and write the decision down somewhere you will find it again.</p>
-
-<h2>How to change a whole document quickly</h2>
-<p>Paste the text into the <a href="/">title capitalization tool</a> and press <strong>Sentence case</strong>. Names and short forms are kept, so "NASA" and "Monday" survive. To go the other way, choose your style guide tab first. APA, Chicago, AP and MLA disagree about small words, and picking the wrong tab gives you an answer that is confidently wrong.</p>
-
-<h2>Quick reference</h2>
-<ul>
-  <li>Article and paper titles → title case, in the guide your college or publisher uses.</li>
-  <li>Subheadings inside a page → sentence case, unless your organisation says otherwise.</li>
-  <li>Buttons, labels, menu items → sentence case, always.</li>
-  <li>Email subject lines → sentence case.</li>
-  <li>Book and film names inside a sentence → title case, because they are names.</li>
-</ul>
-`,
-  },
-  {
-    slug: 'apa-vs-chicago-vs-ap-title-case',
-    category: 'writing',
-    title: 'APA vs Chicago vs AP: The Title Case Differences That Matter',
-    description:
-      'The three most used style guides disagree about small words, prepositions and the word "to". Here is one title run through each, and how to choose.',
-    keywords: ['apa vs chicago title case', 'ap style title case', 'style guide comparison', 'title capitalization rules', 'which style guide'],
-    date: '2026-02-03',
-    updated: '2026-05-20',
+      'Most paragraphs fail for the same three reasons. Fix the opening line, keep one idea per paragraph, and end with momentum. Here is how to do all three.',
+    keywords: ['how to write paragraphs', 'paragraph writing tips', 'topic sentence', 'paragraph structure', 'writing better paragraphs'],
+    date: '2026-07-10',
     readingTime: 7,
     excerpt:
-      'Run one title through all three guides and the difference shows up immediately. Here is what causes it, and how to pick the right guide for your work.',
+      'A paragraph is a contract with the reader. It starts with a promise, delivers on it, and hands the reader to the next one. Most fall apart at step one.',
     body: `
-<p>Take the title <em>a guide to writing between the lines</em> and run it through three style guides:</p>
-<ul>
-  <li><strong>APA:</strong> A Guide to Writing Between the Lines</li>
-  <li><strong>Chicago:</strong> A Guide to Writing between the Lines</li>
-  <li><strong>AP:</strong> A Guide to Writing Between the Lines</li>
-</ul>
-<p>Only one word changes — "between" — and it is not an accident. It comes from one basic disagreement.</p>
+<p>A well-written paragraph does three things: it opens with a clear idea, it develops that idea with one or two specifics, and it ends in a way that makes the next paragraph feel necessary. When any of those three fails, the reader stops. They do not always know why. They just stop.</p>
 
-<h2>Counting letters, or looking at the word type</h2>
-<p>APA and AP <strong>count letters</strong>. Any word of four letters or more gets a capital, whatever type of word it is. That is why "Between", "Through" and "With" all get capitals.</p>
-<p>Chicago and MLA <strong>look at the type of word</strong>. Every preposition stays small, however long it is. So "between", "through" and "underneath" all stay small in the middle of a title. Only the first and last words are exceptions.</p>
-<p>Bluebook and Wikipedia sit in the middle, with a four letter limit. That is why "with" is small there but "Against" is not.</p>
+<h2>Start with the point, not the warm-up</h2>
+<p>The most common problem in paragraphs is a warm-up sentence at the start. Something like "It is important to consider that writing is a complex skill." That sentence says nothing. The real paragraph starts on the second line.</p>
+<p>Read only your opening sentences, one after another. Each one should give the reader something. If it doesn't, delete it and move the real first sentence up.</p>
 
-<h2>The word "to" before a verb</h2>
-<p>Chicago, MLA, Bluebook and Wikipedia keep "to" small when it comes before a verb: <em>How to Write Well</em>. APA and AP also keep it small, but only because it is three letters. If their length rule ever changed, they would give a different answer.</p>
+<h2>One idea per paragraph</h2>
+<p>If your paragraph could be split into two different paragraphs and both would make sense, split it. A paragraph that holds two ideas loses both. The reader cannot hold them together, and search engines cannot decide what the paragraph is about either.</p>
+<p>The test: write a one-sentence summary of your paragraph. If you need the word "and" to connect two separate things, you have two paragraphs.</p>
 
-<h2>After a colon</h2>
-<p>Every guide capitalizes the first word after a colon. This catches more people out than any other rule, because that word is usually short: <em>Editing: A Field Guide</em>, not <em>Editing: a Field Guide</em>.</p>
+<h2>Use concrete details, not abstract claims</h2>
+<p>Abstract: "Good writing is clear and concise." Every writer has read this a hundred times and learned nothing from it.</p>
+<p>Concrete: "Cut the first sentence of every paragraph. Then read the paragraph again. In most cases, it is better." That sentence you just read is 21 words. This note about it is 22. Concrete is almost always shorter than abstract, not longer.</p>
 
-<h2>Joined words with a hyphen</h2>
-<p>APA and AMA capitalize both halves of an important joined word: <em>Self-Report</em>, <em>Follow-Up</em>, <em>Cross-Sectional</em>. Chicago is more relaxed and keeps the second half small when it is a small word, or when the first half cannot stand alone.</p>
+<h2>End with momentum, not a summary</h2>
+<p>A paragraph that ends by repeating what it just said trains the reader to skip the endings. Instead, end with something that makes the next paragraph feel earned. A question, a consequence, or a half-stated thing that the next paragraph will complete.</p>
 
-<h2>Which one should you use?</h2>
-<ul>
-  <li><strong>APA</strong> — psychology, education, nursing, social sciences.</li>
-  <li><strong>Chicago</strong> — books, history, arts subjects, publishing.</li>
-  <li><strong>AP</strong> — news, press releases, PR and most marketing writing.</li>
-  <li><strong>MLA</strong> — literature, languages, culture studies, school and college essays.</li>
-  <li><strong>AMA</strong> — medicine and medical journals.</li>
-  <li><strong>Bluebook</strong> — law journals, court papers and legal references.</li>
-</ul>
-<p>If nobody has told you which to use, and the work is not academic, use AP. It is the most relaxed, the most familiar to ordinary readers, and the least likely to look wrong.</p>
+<h2>The length question</h2>
+<p>There is no right length. A single sentence can be a paragraph if it needs to land hard. Eight sentences can be a paragraph if the idea needs that much room. The wrong answer is a fixed rule. The right answer is: as long as the idea needs, and no longer.</p>
+<p>For web reading, shorter is almost always safer. Readers scan. Give them somewhere to stop every three or four sentences, and they will read more of what you wrote, not less.</p>
 
-<h2>Do not do this by hand</h2>
-<p>These rules are mechanical, which is exactly the kind of job you should hand to a tool. The <a href="/">title capitalization tool</a> has a tab for each guide, and it shows the rules next to the result, so you can check the reasoning instead of just trusting the answer.</p>
+<h2>Fix your existing paragraphs quickly</h2>
+<p>Paste your draft into a document and read only the first sentence of each paragraph, one after another. Every weak one will show itself immediately. Then read only the last sentences. Wherever the ending just repeats the opening, rewrite it to open a door to the next thought instead.</p>
+<p>Run your headings through the <a href="/">capitalization tool</a> when you are done, to make sure the structure looks as clean as the writing does.</p>
 `,
   },
   {
-    slug: 'how-to-write-headlines-that-earn-the-click',
-    category: 'writing',
-    title: 'How to Write Headlines People Actually Click',
+    slug: 'power-words-that-make-writing-stronger',
+    category: 'editing',
+    image: '/blog-img-powerwords.jpg',
+    title: 'Power Words That Make Your Writing Stronger',
     description:
-      'Six title patterns that keep working, the character limits that really cut your title short, and a simple test to run before you publish anything.',
-    keywords: ['how to write headlines', 'headline formulas', 'clickable titles', 'headline length', 'headline writing tips'],
-    date: '2026-03-11',
+      'Some words carry weight and some words dissolve. Here are the categories of strong words, where to use them, and the weak ones to replace them with.',
+    keywords: ['power words for writing', 'strong words in writing', 'replace weak words', 'word choice writing', 'persuasive words list'],
+    date: '2026-07-28',
     readingTime: 8,
     excerpt:
-      'Most headline advice is either "be clever" or a list of tricks. There is a middle path, and it is mostly about being specific.',
+      'Changing twenty words in a five-hundred-word piece can change how the whole thing reads. The words that do the most damage are usually the invisible ones.',
     body: `
-<p>A headline has one job. It should help the right reader decide, in about two seconds, whether this piece is for them. Every so-called "headline formula" is really just a fast way of showing that you are specific.</p>
+<p>Power words are not fancy words. They are specific, concrete words that do the work your sentence needs. The opposite is not simple words — it is vague words. "Improve" is vague. "Cut in half" is powerful. "Interesting" is vague. "Stopped me mid-sentence" is powerful.</p>
 
-<h2>Six patterns that keep working</h2>
+<h2>The four categories of strong words</h2>
+
+<h3>Verbs that do the work themselves</h3>
+<p>Weak verbs need an adverb to do anything. Strong verbs do not. "He walked quickly" needs two words to say what "he strode" says in two. "She said loudly" is weaker than "she announced". Every time you write a verb with an adverb, ask whether a stronger verb already exists.</p>
+<ul>
+  <li>walked quickly → strode, marched, hurried</li>
+  <li>said loudly → announced, declared, insisted</li>
+  <li>looked carefully → studied, examined, scrutinised</li>
+  <li>worked hard → drove, pushed, ground through</li>
+</ul>
+
+<h3>Numbers and specifics</h3>
+<p>"Many readers" is a claim. "More than four thousand readers" is a fact. Specifics are trusted more, remembered more, and shared more. Whenever you write "many", "some", "a lot", "significant", or "various", replace it with the real number if you have it. If you don't, find it.</p>
+
+<h3>Sensory words</h3>
+<p>Anything a reader can see, hear, feel, taste or smell lands harder than an abstract description. "The office was uncomfortable" tells nothing. "The chairs had no cushions and the air smelled of old coffee" is something the reader can be inside.</p>
+
+<h3>Consequence words</h3>
+<p>Words that move the reader from cause to effect: therefore, which means, so, as a result, that is why. These are the hinges of an argument. Without them, readers have to do the logical work themselves, and some will not bother.</p>
+
+<h2>The weak words list</h2>
+<p>These words appear in almost every draft. Most of them can go:</p>
+<ul>
+  <li><em>very, really, quite, rather, fairly, somewhat</em> — cut almost all of them.</li>
+  <li><em>thing, stuff, aspect, area, element</em> — replace with what you actually mean.</li>
+  <li><em>utilize</em> → use. <em>Implement</em> → do. <em>Leverage</em> → use.</li>
+  <li><em>basically, essentially, literally</em> — delete and reread. The sentence is almost always better.</li>
+  <li><em>that</em> — remove it and check if the sentence still works. In about a third of cases it does.</li>
+</ul>
+
+<h2>When simple beats strong</h2>
+<p>Power words are not always the long or dramatic ones. "Now" is more powerful than "at this point in time". "Use" is more powerful than "utilise". The strongest word is always the most exact one, and exact words are usually shorter than the alternatives.</p>
+
+<h2>How to edit for word choice</h2>
+<p>Run a separate editing pass where you look only at verbs and adjectives. Highlight every verb in the document and ask whether a stronger one exists. Then highlight every adjective and ask whether a concrete detail would say it better. This pass alone changes how the whole piece reads.</p>
+<p>When your headings are finalised, run them through the <a href="/">title capitalization tool</a> to make sure the style is consistent across the piece. Inconsistent capitalisation undermines the impression of care that good word choice builds.</p>
+`,
+  },
+  {
+    slug: 'how-to-publish-your-first-article-online',
+    category: 'publishing',
+    image: '/blog-img-publish.jpg',
+    title: 'How to Publish Your First Article Online: A Practical Guide',
+    description:
+      'Choosing where to publish, formatting for the web, setting the metadata and clicking publish. The complete first-article checklist for writers new to online publishing.',
+    keywords: ['how to publish article online', 'publishing first blog post', 'online publishing guide', 'where to publish writing', 'article publishing checklist'],
+    date: '2026-08-12',
+    readingTime: 9,
+    excerpt:
+      'The writing is the hard part and you have already done it. Publishing is a sequence of decisions. Here is what each one is and how to make it quickly.',
+    body: `
+<p>Publishing online is not just uploading a file. It is a sequence of small decisions that together decide whether anyone finds what you wrote. Most first-time publishers get the writing right and then rush the rest. This guide covers every step after the final draft.</p>
+
+<h2>Step 1 — Choose where to publish</h2>
+<p>There are three sensible choices for a first article:</p>
+<ul>
+  <li><strong>Your own site</strong> — maximum control, all the SEO benefit, but more setup time.</li>
+  <li><strong>Medium or Substack</strong> — built-in audience discovery, simple editor, zero setup. The SEO benefit goes to the platform, not to you.</li>
+  <li><strong>A publication that accepts pitches</strong> — their audience, their credibility, your byline. Competitive, but the fastest way to reach a large readership without building one from scratch.</li>
+</ul>
+<p>If your goal is to build your own readership over time, start with your own site. If your goal is to be read by as many people as possible right now, pitch a publication first and cross-post to Medium after.</p>
+
+<h2>Step 2 — Format for reading on screen</h2>
+<p>Web readers scan before they read. Help them with:</p>
+<ul>
+  <li>Subheadings every three to five paragraphs.</li>
+  <li>Short paragraphs — three to four sentences maximum for the web.</li>
+  <li>A bold first word or phrase in a list makes it scannable.</li>
+  <li>One idea per paragraph. Two ideas means two paragraphs.</li>
+</ul>
+<p>Do not use a centred layout for body text. Left-aligned text on a light background with good line height is still the fastest thing to read, and speed of reading is what keeps someone on the page.</p>
+
+<h2>Step 3 — Write the metadata before you publish</h2>
+<p>Most writers publish and then go back to the metadata. This is the wrong order. Write these three things before you click publish, while the article is still fresh in your head:</p>
 <ol>
-  <li><strong>Number + thing + benefit.</strong> "7 Editing Checks That Catch What Spellcheck Misses." The number tells the reader how much they are getting.</li>
-  <li><strong>How to X without Y.</strong> This names the goal and the problem in one line. "How to Cut 20% of Your Draft Without Losing the Argument."</li>
-  <li><strong>The question your reader is typing.</strong> "Should You Capitalize After a Colon?" This is also the single best pattern for search traffic.</li>
-  <li><strong>A specific claim with a number in it.</strong> "We Rewrote 400 Subject Lines. Sentence Case Won."</li>
-  <li><strong>Correcting a common belief.</strong> "Your Meta Description Is Not a Ranking Factor." Only use this when it is actually true.</li>
-  <li><strong>A plain description.</strong> Sometimes "APA Title Case Rules, Explained" is the best possible title. Reference pages do not need a hook.</li>
+  <li><strong>Title tag</strong> — 50 to 60 characters, keyword first. Run it through the <a href="/">title capitalization tool</a> on AP style.</li>
+  <li><strong>Meta description</strong> — 140 to 158 characters. State what the piece gives the reader and why it is believable. No "Welcome to our blog."</li>
+  <li><strong>URL slug</strong> — short, hyphenated, keyword-first. No dates, no underscores. "how-to-write-better" not "how_to_write_better_2026_08_12".</li>
 </ol>
 
-<h2>The length limits that really matter</h2>
-<ul>
-  <li><strong>Google search results:</strong> about 600 pixels, which is roughly 55 to 60 characters. After that you get three dots.</li>
-  <li><strong>Email subject lines:</strong> about 40 to 50 characters before phones cut them.</li>
-  <li><strong>YouTube:</strong> about 60 characters on a computer, fewer on a phone.</li>
-  <li><strong>Social media link cards:</strong> about 70 characters before the wrapping looks bad.</li>
-</ul>
-<p>So put the important half first. If the essential part of your title is at the end, assume nobody reads it.</p>
+<h2>Step 4 — Choose and set your image</h2>
+<p>Every article needs an Open Graph image — the image that appears when someone shares the link on social media or in a message. If you do not set one, the platform picks one for you, and it is usually wrong.</p>
+<p>A simple, readable image with a clear focus works better than a complex one. The image is shown at roughly 1200 × 630 pixels, but will often be seen at 300 × 157. Anything in the middle of a busy image will disappear at that size.</p>
 
-<h2>The specific test</h2>
-<p>Take your headline and ask one question: could this same title sit on a competitor's article without any change? If yes, it is too general. "How to Improve Your Writing" fails. "The Five-Minute Check Every Draft Needs" passes, because it names something that only exists inside your piece.</p>
+<h2>Step 5 — Internal links</h2>
+<p>Before publishing, add at least two links to other things you have written or to tools that are relevant. Internal links keep readers on your site and tell search engines that the pages are connected. They are the easiest thing to add and the most often skipped.</p>
 
-<h2>What to avoid</h2>
+<h2>Step 6 — The pre-publish checklist</h2>
 <ul>
-  <li>Creating curiosity with no payoff. Readers remember being tricked.</li>
-  <li>Words in ALL CAPS. They read as shouting, and they trigger spam filters in email.</li>
-  <li>Two ideas joined by "and". Pick the stronger one.</li>
-  <li>Vague amounts — "some", "a few", "several". Use the real number.</li>
+  <li>Title tag written and correct length.</li>
+  <li>Meta description written and correct length.</li>
+  <li>URL slug is clean and readable.</li>
+  <li>Open Graph image is set.</li>
+  <li>At least two internal links added.</li>
+  <li>Headings are in consistent case — run them through the <a href="/">capitalization tool</a> together.</li>
+  <li>Read the whole piece one more time on the screen you will publish to. It looks different than in a document editor.</li>
 </ul>
 
-<h2>Test before you publish</h2>
-<p>Write ten titles. Not three — ten. The first three are always the obvious ones. Then run them through the <a href="/tools/ai-title-rewriter">title rewriter</a> to see each one as a question, as a list and as a benefit. Check them in the <a href="/">headline score</a> for length and word mix. Pick the one that passes both.</p>
-`,
-  },
-  {
-    slug: 'self-editing-checklist',
-    category: 'editing',
-    title: 'The Self-Editing Checklist That Catches Most Problems',
-    description:
-      'Five separate editing passes, each looking for only one thing. Doing them one at a time catches far more than reading through and fixing as you go.',
-    keywords: ['self editing checklist', 'how to edit your writing', 'editing passes', 'proofreading checklist', 'copy editing tips'],
-    date: '2026-02-18',
-    readingTime: 7,
-    excerpt:
-      'Editing everything at once means editing nothing properly. Split it into five passes and each one becomes easy.',
-    body: `
-<p>Self-editing feels hard because most people try to fix the structure, the sentences, the word choice and the typos all in one read. Your attention cannot do four jobs at the same time. So split them up.</p>
-
-<h2>Pass 1 — Structure (read only the headings)</h2>
-<p>Look at your headings alone, without the text under them. Do they tell the story on their own? If someone read only your subheadings, would they get the argument? Move, join and delete sections here. Do not touch a single sentence yet.</p>
-
-<h2>Pass 2 — Paragraphs (read only first sentences)</h2>
-<p>Read the first sentence of every paragraph, one after another. Each one should move the argument forward. If a paragraph starts with something empty, like "It is important to note that…", delete that opening. The real first sentence is usually the second one.</p>
-
-<h2>Pass 3 — Sentences (read it aloud)</h2>
-<p>Reading aloud is the only reliable way to find sentences that are too long, rhythms that repeat, and clauses that trip you up. Anywhere you stumble, your reader will stumble too. Do not fix the meaning here. Only fix the shape.</p>
-
-<h2>Pass 4 — Words (search for your own habits)</h2>
-<p>Everyone has favourite filler words. Search for yours directly:</p>
-<ul>
-  <li><em>very, really, just, actually, basically, quite, simply</em> — delete nearly all of them.</li>
-  <li><em>there is / there are</em> — usually hiding a stronger verb.</li>
-  <li><em>in order to</em> → <em>to</em>.</li>
-  <li>Words ending in <em>-ly</em> — keep the ones doing real work, cut the rest.</li>
-</ul>
-
-<h2>Pass 5 — Consistency (mechanical, do it last)</h2>
-<p>This is the pass most people skip, and the one readers notice most:</p>
-<ul>
-  <li>Are all your subheadings in the same case? Run them through the <a href="/">capitalization tool</a> together — it handles many lines at once.</li>
-  <li>Straight quotes or curly quotes. Pick one and use it everywhere.</li>
-  <li>The comma before "and" in a list: yes or no, consistently.</li>
-  <li>Numbers: spelled out below ten, or figures everywhere?</li>
-  <li>Dates, times and units all in one format.</li>
-</ul>
-
-<h2>Then leave it alone</h2>
-<p>A draft that has had five clean passes is finished for today. A sixth pass on the same day almost always makes it worse. You start rewriting good sentences because you are bored of them, not because they are wrong.</p>
-`,
-  },
-  {
-    slug: 'fix-all-caps-text',
-    category: 'editing',
-    title: 'How to Fix ALL CAPS Text Without Typing It Again',
-    description:
-      'Pasted a heading in capitals? Got a document from a caps lock lover? Here is how to fix it properly, including the names most tools get wrong.',
-    keywords: ['fix all caps text', 'convert caps to lowercase', 'all caps to sentence case', 'change case in word', 'uppercase to lowercase'],
-    date: '2026-04-07',
-    readingTime: 5,
-    excerpt:
-      'Making ALL CAPS small is easy. Getting the names, short forms and brand names back correctly is the part that needs care.',
-    body: `
-<p>ALL CAPS text has thrown information away. "NASA STUDY SHOWS ICE LOSS IN GREENLAND" gives you no clue about which words originally had capitals. Any tool that converts it has to guess. The only question is how well it guesses.</p>
-
-<h2>The three choices</h2>
-<ul>
-  <li><strong>lowercase</strong> — for when you are going to fix the capitals by hand anyway.</li>
-  <li><strong>Sentence case</strong> — the right choice for body text and subheadings.</li>
-  <li><strong>Title Case</strong> — the right choice for a heading, but only with a style guide selected.</li>
-</ul>
-
-<h2>Why simple tools get it wrong</h2>
-<p>Most converters make everything small, then put a capital on the first letter of each sentence. So "NASA STUDY SHOWS ICE LOSS IN GREENLAND" becomes "Nasa study shows ice loss in greenland". Two mistakes there: NASA lost its capitals, and Greenland lost its capital letter.</p>
-<p>A conversion that actually works needs three things: a list of names, a list of short forms, and a rule that protects brand names with capitals inside them, like iPhone and eBay. The <a href="/tools/uppercase-to-lowercase">uppercase to lowercase converter</a> uses all three.</p>
-
-<h2>The check you still have to do</h2>
-<p>No automatic list knows the names in your particular document. After converting, look through for:</p>
-<ul>
-  <li>People and company names from your own work.</li>
-  <li>Product names and internal project names.</li>
-  <li>Place names outside the common ones.</li>
-  <li>Words that are both ordinary words and names — apple and Apple, polish and Polish, march and March.</li>
-</ul>
-<p>Check that last group carefully. It is the only place where an automatic tool will confidently give you the wrong answer.</p>
-
-<h2>How to avoid it next time</h2>
-<p>If the capitals were a design choice and not a typing accident, do not type them in capitals. Type normally and use the CSS rule <code>text-transform: uppercase</code>. It looks exactly the same on screen, but the real text stays readable for screen readers, searchable in your system, and easy to convert later.</p>
-`,
-  },
-  {
-    slug: 'consistency-pass-style-sheet',
-    category: 'editing',
-    title: 'Make a One-Page Style Sheet Before You Need It',
-    description:
-      'A style sheet is just the twelve decisions you keep making again and again. Writing them down once removes a whole category of editing work.',
-    keywords: ['style sheet', 'editorial style guide', 'house style', 'writing consistency', 'content style guide template'],
-    date: '2026-05-09',
-    readingTime: 5,
-    excerpt:
-      'Not a ninety-page company style guide. One page, twelve decisions, written down so you stop arguing about them every week.',
-    body: `
-<p>Most inconsistency in writing is not carelessness. It is the same decision being made differently on different days. A style sheet fixes that by making each decision once.</p>
-
-<h2>The twelve decisions</h2>
-<ol>
-  <li><strong>Title case for headings?</strong> And which guide — APA, Chicago, AP or MLA?</li>
-  <li><strong>Case for subheadings.</strong> Almost always sentence case.</li>
-  <li><strong>Comma before "and" in a list.</strong> Yes or no.</li>
-  <li><strong>Quote marks.</strong> Straight or curly, and single or double inside a quote.</li>
-  <li><strong>Dashes.</strong> A long dash with no spaces, or a shorter one with spaces?</li>
-  <li><strong>Numbers.</strong> Words below ten? Below a hundred? Or figures everywhere?</li>
-  <li><strong>Dates.</strong> 9 June 2026, June 9 2026, or 2026-06-09.</li>
-  <li><strong>Spelling.</strong> British or American — and keep it the same in code comments too.</li>
-  <li><strong>Short forms.</strong> Spell them out the first time? Full stops in U.S. or not?</li>
-  <li><strong>Product names.</strong> The exact capitals for your products and your competitors.</li>
-  <li><strong>Voice.</strong> "We", or the company name, or neither. Second person or third?</li>
-  <li><strong>Link text.</strong> Describe the destination, never "click here".</li>
-</ol>
-
-<h2>Where to keep it</h2>
-<p>In the same folder as the writing itself, not in a wiki nobody opens. One file, twelve lines, plus a growing list at the bottom of words your team spells differently — "email or e-mail", "setup or set up", "login or log in".</p>
-
-<h2>Two habits that keep it working</h2>
-<p>First, run every batch of headings through the <a href="/">capitalization tool</a> together instead of one at a time. Inconsistency is obvious the moment the lines sit next to each other. Second, keep a saved find-and-replace list for the words on your inconsistency list, and run it as the last step before publishing.</p>
-`,
-  },
-  {
-    slug: 'seo-title-tag-guide',
-    category: 'publishing',
-    title: 'SEO Title Tags: Length, Structure and What Google Rewrites',
-    description:
-      'Google rewrites a majority of title tags. Here is what makes it leave yours alone, plus the real length limits and the mistakes to avoid.',
-    keywords: ['seo title tag', 'title tag length', 'google rewrites titles', 'meta title best practices', 'seo title format'],
-    date: '2026-01-28',
-    updated: '2026-06-15',
-    readingTime: 8,
-    excerpt:
-      'The title tag is still the most powerful thing on your page. It is also the one Google is most likely to overrule.',
-    body: `
-<p>Your title tag does two jobs. It tells search engines what the page is about, and it convinces a human to click. Those goals usually agree with each other. When they do not, Google will rewrite your title.</p>
-
-<h2>The length that works</h2>
-<p>Google cuts titles by pixel width, not by character count, at about 600 pixels on a computer. In practice that means <strong>50 to 60 characters</strong> for most titles. Capital letters and wide letters like W and M take more space than i and l. So a 58 character title in capitals may get cut where a 62 character one in sentence case does not.</p>
-
-<h2>A structure that survives</h2>
-<p>This pattern works in almost every field:</p>
-<p><code>Main Keyword — Benefit or Detail | Brand</code></p>
-<ul>
-  <li><strong>Keyword first.</strong> Putting it early matters for both scanning and for being cut short.</li>
-  <li><strong>One extra detail.</strong> "Free", "2026", "Step by Step", "for Beginners". Pick one, not three.</li>
-  <li><strong>Brand last, and only if it helps.</strong> On a small site the brand name eats characters and buys nothing. Leave it out.</li>
-</ul>
-
-<h2>Why Google rewrites titles</h2>
-<p>Google replaces the title tag on a large share of results. The usual reasons:</p>
-<ul>
-  <li><strong>Keyword stuffing</strong> — "Title Case Converter, Title Case Tool, Convert Title Case Online".</li>
-  <li><strong>The same wording everywhere</strong> — a heavy brand prefix on every single page.</li>
-  <li><strong>Too long</strong> — it will use your H1 or some other phrase from the page instead.</li>
-  <li><strong>Too short or too vague</strong> — a one word title gives it nothing to work with.</li>
-  <li><strong>Does not match the page</strong> — if your H1 and title disagree, Google picks one.</li>
-</ul>
-<p>The fix for all five is the same: write an accurate, specific title that sounds like something a person would say, and make sure it matches your H1 in meaning without copying it word for word.</p>
-
-<h2>Title tag and H1 are not the same thing</h2>
-<p>They should agree, but they should not be identical. The title tag is written for a search results page, where the reader has no context at all. The H1 is written for someone who is already on your page. "SEO Title Tags: Length, Structure and What Google Rewrites" works in search. "Getting your title tags right" works on the page.</p>
-
-<h2>Capitalization in title tags</h2>
-<p>Title case is standard, and it looks more authoritative on a results page full of it. AP style is the safest choice, because it capitalizes anything of four letters or more. That avoids the odd looking small "between" that Chicago produces. Run your titles through the <a href="/">capitalization tool</a> on the AP tab before pasting them into your website.</p>
-
-<h2>A checklist before publishing</h2>
-<ul>
-  <li>50 to 60 characters, with the keyword in the first 30.</li>
-  <li>Reads like a phrase a real person would say.</li>
-  <li>Different from every other title on your site.</li>
-  <li>Matches the H1 in meaning, without copying its exact words.</li>
-  <li>No ALL CAPS, and no more than one separator character.</li>
-</ul>
-`,
-  },
-  {
-    slug: 'meta-description-guide',
-    category: 'publishing',
-    title: 'Meta Descriptions: Not a Ranking Factor, Still Worth Writing',
-    description:
-      'Meta descriptions do not affect ranking directly. They do affect how many people click, which affects everything else. Length, structure and examples.',
-    keywords: ['meta description', 'meta description length', 'meta description examples', 'seo snippet', 'click through rate seo'],
-    date: '2026-03-22',
-    readingTime: 6,
-    excerpt:
-      'Google has said clearly that meta descriptions are not a ranking signal. It has never said they do not matter.',
-    body: `
-<p>The meta description is your advertisement inside the search results. It does not make the page rank. It decides whether that ranking is worth anything to you.</p>
-
-<h2>Length</h2>
-<p>Aim for <strong>140 to 158 characters</strong>. Google shows about 155 to 160 on a computer and less on a phone, and it cuts in the middle of a word with three dots. Anything under about 70 characters looks thin, and it invites Google to write its own version instead.</p>
-
-<h2>A structure that gets clicks</h2>
-<p>The pattern is simple: <strong>what the page gives you, then why it is believable, then what to do.</strong></p>
-<blockquote>Convert titles to APA, Chicago, AP and MLA title case instantly. Each style guide's rules are shown next to the result, so you can check the reasoning.</blockquote>
-<p>That is 150 characters. It names the output, names what makes it different, and does not beg for a click.</p>
-
-<h2>Include the keyword, for bold text</h2>
-<p>Google puts the words from the search in bold inside the snippet. A description containing the exact words your reader typed gets visual weight on a page full of grey text. That is the whole SEO value of the keyword here. It is not about ranking.</p>
-
-<h2>Common mistakes</h2>
-<ul>
-  <li><strong>The same description on many pages.</strong> Worse than having none. It signals templated, low effort content.</li>
-  <li><strong>Auto-filled from the first paragraph.</strong> Your first paragraph is written for people who already arrived.</li>
-  <li><strong>Cut off at 200 characters.</strong> Write to the limit, not past it.</li>
-  <li><strong>"Welcome to our website."</strong> Says nothing, ranks nothing, converts nobody.</li>
-  <li><strong>A promise the page does not keep.</strong> High clicks followed by an instant bounce is a worse signal than fewer clicks.</li>
-</ul>
-
-<h2>When to skip it</h2>
-<p>If a page can rank for dozens of different long search phrases, Google's own generated snippet — pulled from whichever part of the page matches the search — often works better than anything you would write. Reference pages and documentation are the usual examples. For anything with one clear purpose, write it yourself.</p>
-
-<h2>Do not forget the social version</h2>
-<p>Open Graph and Twitter card descriptions are separate tags, and each gets cut at a different length. Roughly 200 characters for a link preview, but the first 100 do the real work. Writing one description and reusing it across all three is perfectly fine. Writing none, and letting each platform guess, is not.</p>
-`,
-  },
-  {
-    slug: 'structured-data-for-articles',
-    category: 'publishing',
-    title: 'Structured Data for Articles: The Minimum That Actually Helps',
-    description:
-      'You do not need twelve schema types. Article, BreadcrumbList and FAQPage cover almost every content site. Here is what to add and what to skip.',
-    keywords: ['structured data', 'article schema', 'json-ld', 'breadcrumblist schema', 'faqpage schema'],
-    date: '2026-04-30',
-    readingTime: 7,
-    excerpt:
-      'Schema markup is one of the few SEO jobs with a clear right answer. It is also one of the most over-complicated.',
-    body: `
-<p>Structured data tells search engines what the parts of your page mean. Most sites need three types and nothing more.</p>
-
-<h2>1. Article (or BlogPosting)</h2>
-<p>The parts that matter are <code>headline</code>, <code>description</code>, <code>datePublished</code>, <code>dateModified</code>, <code>author</code>, <code>publisher</code> and <code>image</code>. Keep the headline under 110 characters, because Google cuts it there.</p>
-<p>The most under-used part is <code>dateModified</code>. If you genuinely update a piece, say so. It is the cheapest freshness signal you have.</p>
-
-<h2>2. BreadcrumbList</h2>
-<p>This replaces the plain URL in a search result with a readable path — <em>Home › Tools › CSV to JSON</em>. It takes very little effort, it is well supported, and it makes a deep page look like part of a proper site instead of a lost page.</p>
-
-<h2>3. FAQPage</h2>
-<p>Use this only when your page really does have a question and answer section that a reader would recognise as one. Adding invented questions just to take more space in the results is exactly the behaviour Google has been reducing.</p>
-
-<h2>What to skip</h2>
-<ul>
-  <li><strong>HowTo</strong> — the rich results for it were mostly removed.</li>
-  <li><strong>Review and rating on your own pages</strong> — reviews of yourself are ignored, and can get you a manual penalty.</li>
-  <li><strong>Speakable</strong> — very narrow use, almost no benefit.</li>
-  <li><strong>WebPage on every page</strong> — harmless, and does nothing.</li>
-</ul>
-
-<h2>How to add it</h2>
-<p>Use JSON-LD inside a <code>&lt;script type="application/ld+json"&gt;</code> tag. Google prefers it, it is easier to generate from a template, and it keeps your HTML clean. Use one block per type, or one <code>@graph</code> list holding all of them.</p>
-<p>Everything in your structured data must also be visible on the page itself. A published date the reader cannot see, or an FAQ answer that exists only in the code, breaks Google's rules. It is not a clever trick.</p>
-
-<h2>Check it before you publish</h2>
-<p>Run the page through Google's Rich Results Test and the Schema.org validator. They catch different problems. The first tells you what Google will actually use. The second tells you whether your code is technically correct. Both are free and take under a minute.</p>
+<h2>After publishing</h2>
+<p>Submit the URL to Google Search Console so it gets crawled faster. Share it once, clearly, without overselling it. Then start the next one. The biggest mistake after a first article is waiting to see how it does before writing the second. The second one is always better, and writing it is the only way to find out.</p>
 `,
   },
 ]

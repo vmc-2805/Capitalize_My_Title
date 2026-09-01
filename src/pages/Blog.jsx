@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import Seo, { articleSchema, breadcrumbSchema, itemListSchema } from '../components/Seo.jsx'
 import { Breadcrumbs, RelatedTools, ShareButtons } from '../components/ui.jsx'
 import { BLOG_CATEGORIES, PAGE_BY_PATH, relatedTools } from '../data/navigation.js'
-import { POSTS_BY_CATEGORY, POST_BY_SLUG, sortedPosts } from '../data/posts.js'
+import { POST_BY_SLUG, sortedPosts } from '../data/posts.js'
 import { SITE } from '../data/site.js'
 
 const formatDate = (iso) =>
@@ -15,36 +15,54 @@ const formatDate = (iso) =>
 
 const categoryLabel = (slug) => BLOG_CATEGORIES.find((c) => c.slug === slug)?.label || slug
 
-function PostCard({ post, showCategory = true }) {
+/* ——— Post card with image ——— */
+function PostCard({ post }) {
   return (
-    <article className="flex h-full flex-col rounded-xl border border-gray-200 bg-white p-5 transition hover:border-brand-300 hover:shadow-sm">
-      <div className="flex flex-wrap items-center gap-2 text-xs text-ink-500">
-        {showCategory && (
-          <Link to={`/blog/${post.category}`} className="chip hover:border-brand-400 hover:text-brand-700">
-            {categoryLabel(post.category)}
-          </Link>
-        )}
-        <time dateTime={post.date}>{formatDate(post.date)}</time>
-        <span>·</span>
-        <span>{post.readingTime} min read</span>
-      </div>
-      <h3 className="mt-2 text-lg leading-snug font-bold text-ink-900">
-        <Link to={`/blog/post/${post.slug}`} className="hover:text-brand-700">
-          {post.title}
+    <article className="flex flex-col rounded-xl border border-gray-200 bg-white overflow-hidden transition hover:border-brand-400 hover:shadow-lg">
+      {/* Image */}
+      {post.image && (
+        <Link to={`/blog/post/${post.slug}`} className="block overflow-hidden" tabIndex={-1} aria-hidden>
+          <img
+            src={post.image}
+            alt={post.title}
+            className="aspect-[3/2] w-full object-cover transition duration-300 hover:scale-105"
+            loading="lazy"
+            width={600}
+            height={400}
+          />
         </Link>
-      </h3>
-      <p className="mt-2 flex-1 text-sm leading-6 text-ink-500">{post.excerpt}</p>
-      <Link
-        to={`/blog/post/${post.slug}`}
-        className="mt-3 text-sm font-semibold text-brand-600 hover:underline"
-        aria-label={`Read the guide: ${post.title}`}
-      >
-        Read the guide →
-      </Link>
+      )}
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-5">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-ink-500">
+          <span className="inline-flex items-center rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-600 border border-brand-100">
+            {categoryLabel(post.category)}
+          </span>
+          <time dateTime={post.date}>{formatDate(post.date)}</time>
+          <span>·</span>
+          <span>{post.readingTime} min read</span>
+        </div>
+        <h2 className="mt-3 text-base font-bold leading-snug text-ink-900">
+          <Link to={`/blog/post/${post.slug}`} className="hover:text-brand-600 transition">
+            {post.title}
+          </Link>
+        </h2>
+        <p className="mt-2 flex-1 text-sm leading-6 text-ink-500 line-clamp-3">{post.excerpt}</p>
+        <Link
+          to={`/blog/post/${post.slug}`}
+          className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:underline"
+          aria-label={`Read: ${post.title}`}
+        >
+          Read article →
+        </Link>
+      </div>
     </article>
   )
 }
 
+/* ================================================================== */
+/* Blog Index — all posts, no category filter                          */
 /* ================================================================== */
 
 export function BlogIndex() {
@@ -61,92 +79,36 @@ export function BlogIndex() {
         description={page.description}
         keywords={page.keywords}
         path="/blog"
-        jsonLd={[breadcrumbSchema(trail), itemListSchema(BLOG_CATEGORIES, 'Blog categories')]}
+        jsonLd={[breadcrumbSchema(trail), itemListSchema(sortedPosts.map((p) => ({ label: p.title, path: `/blog/post/${p.slug}` })), 'All articles')]}
       />
-      <div className="container-page py-8">
+      <div className="container-page py-10">
         <Breadcrumbs trail={trail} />
-        <header className="mb-8">
+        <header className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">{page.h1}</h1>
           <p className="mt-3 max-w-2xl text-[17px] leading-8 text-ink-700">{page.intro}</p>
         </header>
 
-        <nav className="mb-8 flex flex-wrap gap-2" aria-label="Blog categories">
-          {BLOG_CATEGORIES.map((category) => (
-            <Link
-              key={category.path}
-              to={category.path}
-              className="rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-ink-700 transition hover:border-brand-500 hover:text-brand-700"
-            >
-              {category.label}
-              <span className="ml-1.5 text-ink-500">{POSTS_BY_CATEGORY[category.slug]?.length || 0}</span>
-            </Link>
-          ))}
-        </nav>
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {sortedPosts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}
         </div>
-
       </div>
     </>
   )
 }
 
 /* ================================================================== */
+/* BlogCategory — redirect to /blog (kept for backward compat)         */
+/* ================================================================== */
 
 export function BlogCategory({ slug }) {
-  const category = BLOG_CATEGORIES.find((c) => c.slug === slug) || BLOG_CATEGORIES[0]
-  const posts = POSTS_BY_CATEGORY[category.slug] || []
-  const trail = [
-    { label: 'Home', href: '/' },
-    { label: 'Blog', href: '/blog' },
-    { label: category.label, href: category.path },
-  ]
-
-  return (
-    <>
-      <Seo
-        title={category.title}
-        description={category.description}
-        keywords={category.keywords}
-        path={category.path}
-        jsonLd={[breadcrumbSchema(trail), itemListSchema(posts.map((p) => ({ label: p.title, path: `/blog/post/${p.slug}` })), category.label)]}
-      />
-      <div className="container-page py-8">
-        <Breadcrumbs trail={trail} />
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">{category.h1}</h1>
-          <p className="mt-3 max-w-2xl text-[17px] leading-8 text-ink-700">{category.intro}</p>
-        </header>
-
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} showCategory={false} />
-          ))}
-        </div>
-
-        <section className="mt-12">
-          <h2 className="mb-4 text-xl font-bold text-ink-900">Other categories</h2>
-          <div className="flex flex-wrap gap-2">
-            {BLOG_CATEGORIES.filter((c) => c.slug !== category.slug).map((other) => (
-              <Link
-                key={other.path}
-                to={other.path}
-                className="rounded-full border border-gray-300 px-4 py-1.5 text-sm font-semibold text-ink-700 transition hover:border-brand-500 hover:text-brand-700"
-              >
-                {other.label}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-      </div>
-    </>
-  )
+  // Category pages now just show all posts, redirecting user to /blog
+  return <BlogIndex />
 }
 
+/* ================================================================== */
+/* Blog Post detail page                                               */
 /* ================================================================== */
 
 export function BlogPost() {
@@ -158,9 +120,9 @@ export function BlogPost() {
       <div className="container-page py-20 text-center">
         <Seo title="Article not found" description="That article does not exist." path="/blog" noindex />
         <h1 className="text-2xl font-bold text-ink-900">Article not found</h1>
-        <p className="mt-2 text-ink-500">The piece you are looking for may have been renamed.</p>
-        <Link to="/blog" className="btn-primary mt-6">
-          Back to the blog
+        <p className="mt-2 text-ink-500">The article you are looking for may have moved.</p>
+        <Link to="/blog" className="btn-primary mt-6 inline-flex">
+          ← Back to blog
         </Link>
       </div>
     )
@@ -170,11 +132,12 @@ export function BlogPost() {
   const trail = [
     { label: 'Home', href: '/' },
     { label: 'Blog', href: '/blog' },
-    { label: category?.label || post.category, href: category?.path || '/blog' },
     { label: post.title, href: `/blog/post/${post.slug}` },
   ]
-  const related = sortedPosts.filter((p) => p.slug !== post.slug && p.category === post.category).slice(0, 2)
-  const more = sortedPosts.filter((p) => p.slug !== post.slug && p.category !== post.category).slice(0, 2)
+
+  const related = sortedPosts
+    .filter((p) => p.slug !== post.slug)
+    .slice(0, 3)
 
   return (
     <>
@@ -194,32 +157,36 @@ export function BlogPost() {
 
         <div className="mx-auto max-w-3xl">
           <article className="min-w-0">
-            <header className="mb-6">
-              <Link to={category?.path || '/blog'} className="chip hover:border-brand-400 hover:text-brand-700">
+            {/* Header */}
+            <header className="mb-8 border-b border-gray-200 pb-6">
+              <span className="inline-flex items-center rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-600 border border-brand-100">
                 {category?.label || post.category}
-              </Link>
-              <h1 className="mt-3 text-3xl leading-tight font-bold tracking-tight text-ink-900 sm:text-4xl">
+              </span>
+              <h1 className="mt-4 text-3xl leading-tight font-bold tracking-tight text-ink-900 sm:text-4xl">
                 {post.title}
               </h1>
-              <p className="mt-3 text-[17px] leading-8 text-ink-700">{post.excerpt}</p>
-              <p className="mt-4 text-sm text-ink-500">
-                Published <time dateTime={post.date}>{formatDate(post.date)}</time>
+              <p className="mt-3 text-[17px] leading-8 text-ink-500">{post.excerpt}</p>
+              <p className="mt-4 flex flex-wrap items-center gap-2 text-sm text-ink-500">
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
                 {post.updated && (
                   <>
-                    {' · '}Updated <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+                    <span>·</span>
+                    <span>Updated <time dateTime={post.updated}>{formatDate(post.updated)}</time></span>
                   </>
                 )}
-                {' · '}
-                {post.readingTime} min read
+                <span>·</span>
+                <span>{post.readingTime} min read</span>
               </p>
             </header>
 
+            {/* Body */}
             <div
               className="prose-basic max-w-none"
-              // Post bodies are authored in this repository, not user supplied.
+              // Post bodies are authored in this repository, not user input.
               dangerouslySetInnerHTML={{ __html: post.body }}
             />
 
+            {/* Footer actions */}
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-gray-200 pt-6">
               <ShareButtons url={`${SITE.url}/blog/post/${post.slug}`} title={post.title} />
               <Link to="/blog" className="text-sm font-semibold text-brand-600 hover:underline">
@@ -227,12 +194,21 @@ export function BlogPost() {
               </Link>
             </div>
 
-            {(related.length > 0 || more.length > 0) && (
+            {/* Related posts */}
+            {related.length > 0 && (
               <section className="mt-12">
-                <h2 className="mb-4 text-xl font-bold text-ink-900">Keep reading</h2>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  {[...related, ...more].map((other) => (
-                    <PostCard key={other.slug} post={other} />
+                <h2 className="mb-5 text-xl font-bold text-ink-900">More articles</h2>
+                <div className="grid gap-4 sm:grid-cols-3">
+                  {related.map((other) => (
+                    <article key={other.slug} className="rounded-lg border border-gray-200 p-4 transition hover:border-brand-400 hover:shadow-sm">
+                      <span className="text-xs font-semibold text-brand-600">{categoryLabel(other.category)}</span>
+                      <h3 className="mt-1 text-sm font-bold text-ink-900 leading-snug">
+                        <Link to={`/blog/post/${other.slug}`} className="hover:text-brand-600">
+                          {other.title}
+                        </Link>
+                      </h3>
+                      <p className="mt-1 text-xs text-ink-500">{other.readingTime} min read</p>
+                    </article>
                   ))}
                 </div>
               </section>

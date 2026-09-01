@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { BLOG_CATEGORIES, TOOL_GROUPS } from '../data/navigation.js'
+import { TOOL_GROUPS } from '../data/navigation.js'
 import { SITE } from '../data/site.js'
 import { Icon } from './ui.jsx'
 
@@ -8,16 +8,16 @@ function Logo() {
   return (
     <Link
       to="/"
-      className="flex shrink-0 items-center gap-2.5 rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
+      className="flex shrink-0 items-center rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
       aria-label={`${SITE.name} home`}
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-600 text-[15px] font-bold text-white">
-        Aa
-      </span>
-      {/* One line reads better beside the nav than the stacked two-line mark. */}
-      <span className="text-[17px] leading-none font-bold tracking-tight whitespace-nowrap text-ink-900">
-        Capitalize <span className="text-brand-700">My Title</span>
-      </span>
+      <img
+        src="/Logo.png"
+        alt={SITE.name}
+        className="h-14 w-auto object-contain"
+        width={280}
+        height={56}
+      />
     </Link>
   )
 }
@@ -157,34 +157,15 @@ function MobileNav({ open, onClose }) {
           </div>
         ))}
 
-        {[{ id: 'blog', label: 'Blog', items: BLOG_CATEGORIES }].map((menu) => (
-          <div key={menu.id} className="border-b border-gray-100">
-            <button
-              type="button"
-              onClick={() => toggle(menu.id)}
-              aria-expanded={section === menu.id}
-              className="flex w-full cursor-pointer items-center justify-between py-3 text-left text-sm font-semibold text-ink-900"
+        <div key="blog" className="border-b border-gray-100">
+            <Link
+              to="/blog"
+              onClick={onClose}
+              className="flex w-full items-center py-3 text-left text-sm font-semibold text-ink-900 hover:text-brand-600"
             >
-              {menu.label}
-              <Icon.chevronDown className={`transition ${section === menu.id ? 'rotate-180' : ''}`} />
-            </button>
-            {section === menu.id && (
-              <ul className="pb-2">
-                {menu.items.map((item) => (
-                  <li key={item.path}>
-                    <Link
-                      to={item.path}
-                      onClick={onClose}
-                      className="block py-2 pl-3 text-sm text-ink-700 hover:text-brand-700"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+              Blog
+            </Link>
           </div>
-        ))}
 
         <Link to="/tools" onClick={onClose} className="btn-primary mt-4 w-full">
           Browse all tools
@@ -286,7 +267,16 @@ export default function Header() {
           <Logo />
           <nav ref={navRef} className="hidden h-full items-center lg:flex" aria-label="Main">
             {menuButton('tools', 'Tools', isToolsSection)}
-            {menuButton('blog', 'Blog', isBlogSection)}
+            <NavLink
+              to="/blog"
+              className={({ isActive }) =>
+                `flex h-full items-center border-b-2 px-3 text-[13px] font-bold tracking-[0.06em] uppercase transition ${
+                  isActive || isBlogSection ? 'border-brand-600 text-brand-700' : 'border-transparent text-ink-700 hover:text-brand-700'
+                }`
+              }
+            >
+              Blog
+            </NavLink>
             <NavLink
               to="/tools"
               className={({ isActive }) =>

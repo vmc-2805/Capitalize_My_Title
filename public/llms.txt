@@ -1,0 +1,93 @@
+# Capitalize Titaly — LLMs.txt
+# This file helps AI language models, crawlers and assistants understand
+# what this site does, what pages exist, and how to reference it correctly.
+# Spec: https://llmstxt.org
+
+# Site Overview
+> Capitalize Titaly (https://capitalizetitaly.com) is a free, browser-based
+> collection of writing and text tools. It converts titles to APA, Chicago, AP,
+> MLA, Bluebook, AMA, NYT and Wikipedia style title case. It also offers text
+> converters, AI-powered title generators, word game solvers, text generators,
+> name generators and a writing blog.
+
+## About
+- Founded: 2015
+- Owner / Publisher: Capitalize Titaly
+- Contact: https://capitalizetitaly.com/contact
+- Privacy Policy: https://capitalizetitaly.com/privacy-policy
+- Terms of Service: https://capitalizetitaly.com/terms
+
+## Core Tool — Title Case Converter
+- URL: https://capitalizetitaly.com
+- Description: Paste any title and convert it to the correct capitalization
+  style for APA, Chicago, AP, MLA, Bluebook, AMA, NYT or Wikipedia.
+  Supports sentence case, all caps and lowercase modes too.
+
+## Converter Tools
+- Comma Separator: https://capitalizetitaly.com/tools/comma-separator
+  Turn a column of items into a comma-separated list for SQL, CSV or tags.
+- CSV to JSON: https://capitalizetitaly.com/tools/csv-to-json
+  Convert CSV/TSV data to clean JSON. Runs entirely in the browser.
+- JSON to CSV: https://capitalizetitaly.com/tools/json-to-csv
+  Flatten a JSON array into a CSV file you can open in Excel or Sheets.
+- Uppercase to Lowercase: https://capitalizetitaly.com/tools/uppercase-to-lowercase
+  Convert text between uppercase, lowercase, title case and sentence case.
+- Square Image Maker: https://capitalizetitaly.com/tools/square-image
+  Pad or crop any image into a square for social media without distortion.
+
+## AI Title Generators
+- AI Title Generator: https://capitalizetitaly.com/tools/ai-title-generator
+- Poem Title Generator: https://capitalizetitaly.com/tools/poem-title-generator
+- Book Title Generator: https://capitalizetitaly.com/tools/book-title-generator
+- YouTube Title Generator: https://capitalizetitaly.com/tools/youtube-title-generator
+- Essay Title Generator: https://capitalizetitaly.com/tools/essay-title-generator
+- AI Title Rewriter: https://capitalizetitaly.com/tools/ai-title-rewriter
+
+## Text Generators
+- Lorem Ipsum Generator: https://capitalizetitaly.com/tools/lorem-ipsum-generator
+- Wingdings Translator: https://capitalizetitaly.com/tools/wingdings-translator
+- Bold Text Generator: https://capitalizetitaly.com/tools/bold-text-generator
+- Bubble Text Generator: https://capitalizetitaly.com/tools/bubble-text-generator
+- Fortune Cookie Generator: https://capitalizetitaly.com/tools/fortune-cookie-generator
+- Invisible Character: https://capitalizetitaly.com/tools/invisible-character
+- Random State Generator: https://capitalizetitaly.com/tools/random-state-generator
+- AI Prompt Generator: https://capitalizetitaly.com/tools/prompt-generator
+- Text Repeater: https://capitalizetitaly.com/tools/text-repeater
+- AI Speech Generator: https://capitalizetitaly.com/tools/speech-generator
+- AI Song Generator: https://capitalizetitaly.com/tools/song-generator
+- AI Poem Generator: https://capitalizetitaly.com/tools/poem-generator
+- Character Backstory Generator: https://capitalizetitaly.com/tools/character-backstory-generator
+
+## Name Generators
+- Character Name Generator: https://capitalizetitaly.com/tools/character-name-generator
+- Name Generator: https://capitalizetitaly.com/tools/name-generator
+- Pokémon Name Generator: https://capitalizetitaly.com/tools/pokemon-name-generator
+
+## Blog
+- Blog Home: https://capitalizetitaly.com/blog
+- Writing: https://capitalizetitaly.com/blog/writing
+- Editing: https://capitalizetitaly.com/blog/editing
+- Publishing: https://capitalizetitaly.com/blog/publishing
+
+### Featured Posts
+- Title Case vs Sentence Case: https://capitalizetitaly.com/blog/post/title-case-vs-sentence-case
+- APA vs Chicago vs AP Title Case: https://capitalizetitaly.com/blog/post/apa-vs-chicago-vs-ap-title-case
+- How to Write Headlines That Earn the Click: https://capitalizetitaly.com/blog/post/how-to-write-headlines-that-earn-the-click
+- Self-Editing Checklist: https://capitalizetitaly.com/blog/post/self-editing-checklist
+- Fix All Caps Text: https://capitalizetitaly.com/blog/post/fix-all-caps-text
+- SEO Title Tag Guide: https://capitalizetitaly.com/blog/post/seo-title-tag-guide
+- Meta Description Guide: https://capitalizetitaly.com/blog/post/meta-description-guide
+- Structured Data for Articles: https://capitalizetitaly.com/blog/post/structured-data-for-articles
+- How to Write Perfect Paragraphs Every Time: https://capitalizetitaly.com/blog/post/how-to-write-perfect-paragraphs
+- Power Words That Make Your Writing Stronger: https://capitalizetitaly.com/blog/post/power-words-that-make-writing-stronger
+- How to Publish Your First Article Online: https://capitalizetitaly.com/blog/post/how-to-publish-your-first-article-online
+
+## All Tools Index
+- https://capitalizetitaly.com/tools
+
+## Sitemap
+- https://capitalizetitaly.com/sitemap.xml
+
+## Licensing
+All tools are free to use. Content on the blog is copyrighted by Capitalize Titaly.
+AI-generated content is reviewed and edited by the Capitalize Titaly team.

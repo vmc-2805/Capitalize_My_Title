@@ -234,7 +234,7 @@ export default function Home() {
       <section className="border-b border-gray-200 bg-white">
         <div className="container-page py-8">
           <h1 className="text-[30px] leading-tight font-bold tracking-tight text-ink-900 sm:text-[38px]">
-            Capitalize My Title
+            Capitalize Titaly
           </h1>
           <p className="mt-2.5 max-w-3xl text-base leading-7 text-ink-700">{HOME_PAGE.intro}</p>
           <p className="mt-3 text-xs tracking-wide text-ink-500">

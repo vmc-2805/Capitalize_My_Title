@@ -451,11 +451,11 @@ export const STATIC_PAGES = [
     path: '/about',
     key: 'About',
     label: 'About',
-    title: 'About Capitalize My Title — Who Makes These Tools',
+    title: 'About Capitalize Titaly — Who Makes These Tools',
     description:
-      'Capitalize My Title makes free writing tools that run in your browser. Read how the style guide rules are built and why nothing is ever uploaded.',
-    keywords: ['about capitalize my title', 'title case tool about', 'free writing tools team'],
-    h1: 'About Capitalize My Title',
+      'Capitalize Titaly makes free writing tools that run in your browser. Read how the style guide rules are built and why nothing is ever uploaded.',
+    keywords: ['about Capitalize Titaly', 'title case tool about', 'free writing tools team'],
+    h1: 'About Capitalize Titaly',
     intro: 'Free writing tools that run fully inside your browser.',
   },
   {
@@ -465,7 +465,7 @@ export const STATIC_PAGES = [
     title: 'Contact — Report a Problem or Ask for a Tool',
     description:
       'Found a title our tool gets wrong, a bug, or a tool we should build? Send it to us. We read every message, and style guide corrections come first.',
-    keywords: ['contact capitalize my title', 'report a bug', 'request a tool', 'style guide correction'],
+    keywords: ['contact Capitalize Titaly', 'report a bug', 'request a tool', 'style guide correction'],
     h1: 'Contact',
     intro: 'Bug reports, style guide corrections and tool requests all come to the same inbox.',
   },
@@ -484,7 +484,7 @@ export const STATIC_PAGES = [
     path: '/terms',
     key: 'Terms',
     label: 'Terms of Use',
-    title: 'Terms of Use — Capitalize My Title',
+    title: 'Terms of Use — Capitalize Titaly',
     description:
       'The simple rules for using these free tools: what you can do with the results, what we do not promise, and the limits of our responsibility.',
     keywords: ['terms of use', 'terms and conditions', 'tool usage terms'],
@@ -497,11 +497,11 @@ export const HOME_PAGE = {
   path: '/',
   key: 'Home',
   label: 'Title Capitalization Tool',
-  title: 'Capitalize My Title — Free Title Case Converter (APA, AP, MLA)',
+  title: 'Capitalize Titaly — Free Title Case Converter (APA, AP, MLA)',
   description:
     'Capitalize any title correctly in APA, Chicago, AP, MLA, Bluebook, AMA, NYT and Wikipedia style. Free title case converter with headline scoring and case tools.',
   keywords: [
-    'capitalize my title',
+    'Capitalize Titaly',
     'title case converter',
     'title capitalization tool',
     'apa title case',
@@ -510,7 +510,7 @@ export const HOME_PAGE = {
     'mla title case converter',
     'headline capitalization',
   ],
-  h1: 'Capitalize My Title',
+  h1: 'Capitalize Titaly',
   intro:
     'Paste your title, pick a style guide, and get the correct capitals at once — APA, Chicago, AP, MLA, Bluebook, AMA, New York Times, Wikipedia and email subject style.',
 }

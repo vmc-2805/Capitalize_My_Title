@@ -18,12 +18,15 @@ export default function Footer() {
       <div className="container-page py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <span className="flex h-8 w-8 items-center justify-center rounded-md bg-brand-600 text-sm font-bold text-white">
-                Aa
-              </span>
-              <span className="text-[15px] font-bold text-ink-900">{SITE.name}</span>
-            </div>
+            <Link to="/" aria-label={`${SITE.name} home`}>
+              <img
+                src="/Logo.png"
+                alt={SITE.name}
+                className="h-12 w-auto object-contain"
+                width={240}
+                height={48}
+              />
+            </Link>
             <p className="mt-3 max-w-sm text-sm leading-6 text-ink-500">
               Free writing tools that run fully inside your browser. Fix the capitals in your titles using nine style
               guides, convert data, find words, and generate the text you are stuck on. Nothing you type is uploaded.

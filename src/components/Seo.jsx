@@ -33,10 +33,14 @@ export default function Seo({
       <title>{finalTitle}</title>
       <meta name="description" content={activeDescription} />
       {activeKeywords.length > 0 && <meta name="keywords" content={activeKeywords.join(', ')} />}
+      <meta name="author" content={SITE.publisher} />
       <link rel="canonical" href={canonical} />
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       {noindex && <meta name="robots" content="noindex, follow" />}
       {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />}
 
+      {/* Google Search Console ownership verification — set VITE_GSC_ID in .env */}
+      {SITE.gscId && <meta name="google-site-verification" content={SITE.gscId} />}
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE.name} />
       <meta property="og:title" content={finalTitle} />
