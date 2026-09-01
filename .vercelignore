@@ -1,0 +1,4 @@
+# Cloudflare Workers entry point - not a Vercel function.
+api/worker.js
+wrangler.toml
+netlify.toml
