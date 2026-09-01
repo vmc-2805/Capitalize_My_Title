@@ -54,8 +54,6 @@ export const COMPONENTS = {
   BlogPost: named(blog, 'BlogPost'),
 
   AllTools: named(staticPages, 'AllTools'),
-  About: named(staticPages, 'About'),
-  Contact: named(staticPages, 'Contact'),
   Privacy: named(staticPages, 'Privacy'),
   Terms: named(staticPages, 'Terms'),
   NotFound: named(staticPages, 'NotFound'),

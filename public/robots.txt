@@ -2,24 +2,4 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers — allowed so AI assistants can index and cite this site
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: GoogleOther
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
 Sitemap: https://capitalizetitaly.com/sitemap.xml
-
-# LLMs.txt — machine-readable site overview for AI language models
-# https://llmstxt.org
-LLMs: https://capitalizetitaly.com/llms.txt

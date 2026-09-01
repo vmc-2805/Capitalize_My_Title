@@ -106,179 +106,7 @@ export function AllTools() {
   )
 }
 
-/* ================================================================== */
-/* About                                                               */
-/* ================================================================== */
 
-export function About() {
-  return (
-    <ContentPage path="/about" jsonLd={[organizationSchema()]}>
-      <div className="prose-basic max-w-3xl">
-        <h2>What this site is</h2>
-        <p>
-          {SITE.name} is a set of free writing tools built around one job that everybody has and nobody
-          enjoys: getting the capital letters in a title right. Around that sits a growing set of converters, word
-          tools, text generators and name generators. All of them work the same way: no account, no upload, no limit.
-        </p>
-
-        <h2>Everything runs in your browser</h2>
-        <p>
-          There is no server that reads your text. The style guide rules, the CSV reader, the anagram solver and the
-          dictionary all run on your own device. Once a page has loaded, the tools keep working even without internet,
-          and nothing you paste goes anywhere. This is simply how the site is built. It is not a promise we are asking
-          you to trust.
-        </p>
-
-        <h2>How the style guides are implemented</h2>
-        <p>
-          Each of the eight title case guides is written down as a small set of rules: which kinds of words can stay
-          small, up to what length, whether “to” before a verb is treated differently, and how joined words are
-          handled. All eight then run through the same engine. That is why they behave consistently, and why adding a
-          new guide is easy.
-        </p>
-        <p>
-          The rules come from the published editions of APA 7, the Chicago Manual of Style, the AP Stylebook, MLA 9,
-          the Bluebook and the AMA Manual of Style, plus the public style notes of The New York Times and Wikipedia.
-          Where a guide is genuinely unclear, we follow the most common practice in published work, and we say so in
-          the rule list next to the tool.
-        </p>
-
-        <h2>Corrections are welcome</h2>
-        <p>
-          Style guides get updated, and unusual cases get missed. If you find a title our tool gets wrong, send it to
-          us with the guide name and the answer you expected. Corrections like these go to the front of the queue,
-          because a wrong capital letter defeats the whole purpose of this site.
-        </p>
-
-        <h2>How it is funded</h2>
-        <p>
-          Advertising, and later an optional ad-free membership. Because everything runs in your browser, our hosting
-          cost is almost nothing. That is why no tool is behind a payment, and why we have no plan to put one there.
-        </p>
-
-        <p>
-          <Link to="/contact">Get in touch</Link> · <Link to="/tools">Browse all tools</Link> ·{' '}
-          <Link to="/privacy-policy">Privacy policy</Link>
-        </p>
-      </div>
-    </ContentPage>
-  )
-}
-
-/* ================================================================== */
-/* Contact                                                             */
-/* ================================================================== */
-
-export function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', topic: 'Style guide correction', message: '' })
-  const [sent, setSent] = useState(false)
-
-  const mailto = `mailto:hello@capitalizemytitle.com?subject=${encodeURIComponent(
-    `[${form.topic}] ${form.name || 'Website enquiry'}`,
-  )}&body=${encodeURIComponent(`${form.message}\n\n— ${form.name}\n${form.email}`)}`
-
-  return (
-    <ContentPage path="/contact">
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <div>
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault()
-              // No form backend is connected, so the message is handed to the
-              // user's own mail client rather than posted to a third party.
-              window.location.href = mailto
-              setSent(true)
-            }}
-          >
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="block">
-                <span className="label">Your name</span>
-                <input
-                  className="field"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  required
-                />
-              </label>
-              <label className="block">
-                <span className="label">Email</span>
-                <input
-                  type="email"
-                  className="field"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  required
-                />
-              </label>
-            </div>
-
-            <label className="block">
-              <span className="label">What is this about?</span>
-              <select
-                className="field"
-                value={form.topic}
-                onChange={(e) => setForm({ ...form, topic: e.target.value })}
-              >
-                <option>Style guide correction</option>
-                <option>Bug report</option>
-                <option>Tool request</option>
-                <option>Advertising</option>
-                <option>Something else</option>
-              </select>
-            </label>
-
-            <label className="block">
-              <span className="label">Message</span>
-              <textarea
-                rows={7}
-                className="field"
-                value={form.message}
-                onChange={(e) => setForm({ ...form, message: e.target.value })}
-                placeholder="If you are reporting a capital letter problem, please include the exact title, the style guide you chose, and the result you expected."
-                required
-              />
-            </label>
-
-            <button type="submit" className="btn-primary">
-              Open in your email app
-            </button>
-            {sent && (
-              <p className="text-sm text-emerald-700">
-                Your email app should have opened. If it did not, write to{' '}
-                <a className="font-semibold underline" href="mailto:hello@capitalizemytitle.com">
-                  hello@capitalizemytitle.com
-                </a>
-                .
-              </p>
-            )}
-            <p className="text-xs text-ink-500">
-              This form does not send anything by itself. It only opens a message in your own email app, so nothing is
-              sent to any other service.
-            </p>
-          </form>
-        </div>
-
-        <aside className="space-y-6">
-          <div className="card p-5">
-            <h2 className="text-sm font-bold text-ink-900">Reporting a capitalization bug</h2>
-            <p className="mt-2 text-sm leading-6 text-ink-500">
-              Give us three things and we can usually fix it the same week: the exact title, the style guide you chose,
-              and the result you expected. A line quoted from the guide itself is even better.
-            </p>
-          </div>
-          <div className="card p-5">
-            <h2 className="text-sm font-bold text-ink-900">Requesting a tool</h2>
-            <p className="mt-2 text-sm leading-6 text-ink-500">
-              Tell us what you are doing by hand today, and how often you do it. The tools we build first are the ones
-              that replace a boring copy-paste job.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </ContentPage>
-  )
-}
 
 /* ================================================================== */
 /* Privacy                                                             */
@@ -353,8 +181,7 @@ export function Privacy() {
 
         <h2>Contact</h2>
         <p>
-          Questions about privacy go to <a href="mailto:privacy@capitalizemytitle.com">privacy@capitalizemytitle.com</a>{' '}
-          or via the <Link to="/contact">contact page</Link>.
+          Questions about privacy go to <a href="mailto:privacy@capitalizemytitle.com">privacy@capitalizemytitle.com</a>.
         </p>
       </div>
     </ContentPage>
@@ -418,7 +245,7 @@ export function Terms() {
 
         <h2>Contact</h2>
         <p>
-          Questions about these terms go to the <Link to="/contact">contact page</Link>.
+          Questions about these terms go to <a href="mailto:hello@capitalizemytitle.com">hello@capitalizemytitle.com</a>.
         </p>
       </div>
     </ContentPage>

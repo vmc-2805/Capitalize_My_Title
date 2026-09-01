@@ -447,28 +447,8 @@ export const STATIC_PAGES = [
     h1: 'Blog',
     intro: 'Long guides on writing, editing and publishing — the thinking behind every tool on this site.',
   },
-  {
-    path: '/about',
-    key: 'About',
-    label: 'About',
-    title: 'About Capitalize Titaly — Who Makes These Tools',
-    description:
-      'Capitalize Titaly makes free writing tools that run in your browser. Read how the style guide rules are built and why nothing is ever uploaded.',
-    keywords: ['about Capitalize Titaly', 'title case tool about', 'free writing tools team'],
-    h1: 'About Capitalize Titaly',
-    intro: 'Free writing tools that run fully inside your browser.',
-  },
-  {
-    path: '/contact',
-    key: 'Contact',
-    label: 'Contact',
-    title: 'Contact — Report a Problem or Ask for a Tool',
-    description:
-      'Found a title our tool gets wrong, a bug, or a tool we should build? Send it to us. We read every message, and style guide corrections come first.',
-    keywords: ['contact Capitalize Titaly', 'report a bug', 'request a tool', 'style guide correction'],
-    h1: 'Contact',
-    intro: 'Bug reports, style guide corrections and tool requests all come to the same inbox.',
-  },
+
+
   {
     path: '/privacy-policy',
     key: 'Privacy',
