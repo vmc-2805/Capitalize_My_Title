@@ -14,10 +14,6 @@ export const SITE = {
   logo: '/Logo.png',
   ogImage: '/og-default.png',
 
-  // ── Analytics ────────────────────────────────────────────────────────────
-  // Set VITE_GA_ID in .env (e.g. G-XXXXXXXXXX). Leave blank → no script loads.
-  analyticsId: import.meta.env?.VITE_GA_ID || '',
-
   // ── Google Search Console ─────────────────────────────────────────────────
   // Set VITE_GSC_ID in .env with the content= value from the HTML meta tag
   // that Search Console gives you (e.g. "abcdef1234567890").
