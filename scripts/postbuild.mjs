@@ -248,7 +248,7 @@ async function run() {
       description: 'That page does not exist. Browse all free writing tools instead.',
       keywords: [],
       type: 'website',
-    }).replace('<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />', '<meta name="robots" content="noindex, follow">'),
+    }).replace('<meta name="robots" content="index, follow, max-image-preview:large" />', '<meta name="robots" content="noindex, follow">'),
   )
 
   await renderIcons()

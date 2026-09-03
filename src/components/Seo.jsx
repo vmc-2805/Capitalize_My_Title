@@ -37,7 +37,7 @@ export default function Seo({
       <link rel="canonical" href={canonical} />
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
       {noindex && <meta name="robots" content="noindex, follow" />}
-      {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />}
+      {!noindex && <meta name="robots" content="index, follow, max-image-preview:large" />}
 
       {/* Google Search Console ownership verification — set VITE_GSC_ID in .env */}
       {SITE.gscId && <meta name="google-site-verification" content={SITE.gscId} />}
