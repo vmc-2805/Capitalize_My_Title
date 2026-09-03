@@ -12,7 +12,7 @@ export default function Seo({
   keywords = [],
   image = SITE.ogImage,
   type = 'website',
-  noindex = true,
+  noindex = false,
   publishedTime,
   modifiedTime,
   jsonLd = [],
